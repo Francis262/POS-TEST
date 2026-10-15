@@ -1,0 +1,26 @@
+# Flutter and generated project artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+coverage/
+
+# Generated during CI from Flutter template
+/android/
+/ios/
+/linux/
+/macos/
+/windows/
+/web/
+
+# Local editor files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
