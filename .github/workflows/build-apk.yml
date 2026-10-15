@@ -1,6 +1,11 @@
 name: Build Android APK
 
 on:
+  # Temporary one-shot verification: only the Android config fix commit triggers CI.
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/configure_android.py'
   workflow_dispatch:
     inputs:
       runner:
@@ -46,7 +51,7 @@ jobs:
       - name: Generate Android project
         run: flutter create --platforms=android --project-name=pos_skener --org=si.lacantina --no-pub .
 
-      - name: Configure Android (camera and minSdk)
+      - name: Configure Android (camera, minSdk, NDK and R8)
         run: python scripts/configure_android.py
 
       - name: Download Flutter dependencies
